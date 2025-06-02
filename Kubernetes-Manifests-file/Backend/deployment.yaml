@@ -25,21 +25,25 @@ spec:
       - name: ecr-registry-secret
       containers:
       - name: api
+<<<<<<< HEAD
         image: 407622020962.dkr.ecr.us-east-1.amazonaws.com/backend:2
+=======
+        image: 498484134091.dkr.ecr.us-east-1.amazonaws.com/backend:1
+>>>>>>> d946780 (final-commit)
         imagePullPolicy: Always
         env:
-          - name: MONGO_CONN_STR
-            value: mongodb://mongodb-svc:27017/todo?directConnection=true
-          - name: MONGO_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: mongo-sec
-                key: username
-          - name: MONGO_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mongo-sec
-                key: password
+        - name: MONGO_CONN_STR
+          value: mongodb://mongodb-svc:27017/todo?directConnection=true
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-sec
+              key: username
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-sec
+              key: password
         ports:
         - containerPort: 3500
         livenessProbe:
