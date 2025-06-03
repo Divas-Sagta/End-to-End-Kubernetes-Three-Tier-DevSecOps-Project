@@ -1,4 +1,4 @@
-# Three-Tier Web Application Deployment on AWS EKS using AWS EKS, ArgoCD, Prometheus, Grafana, and Jenkins
+# Three-Tier Web Application Deployment on AWS EKS using AWS EKS, Terraform, ArgoCD and Jenkins
 
 Welcome to the Three-Tier Web Application Deployment project! 🚀
 
