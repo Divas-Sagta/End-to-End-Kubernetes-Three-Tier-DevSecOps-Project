@@ -1,0 +1,15 @@
+name: Trigger Frontend Jenkins Pipeline
+
+on:
+  push:
+    paths:
+    - 'Application-Code/frontend/**'
+
+jobs:
+  trigger-frontend:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger Frontend Jenkins Job
+      run: |
+        curl -X POST "https://34.235.152.62:8080/job/Three-tier-frontend/build" \
+          --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}"
